@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--mybaits头约束 -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置映射，填写绝对路径 -->
+<mapper namespace="com.example.demo.mapper.UserMapper">
+
+    <select id="getUserByMap" resultType="com.example.demo.entity.User" parameterType="java.util.Map">
+        SELECT * FROM USER where 1 = 1
+        AND
+        (username = #{username} AND (password = #{password} OR email = #{password})) or id = #{id}
+
+    </select>
+
+</mapper>
